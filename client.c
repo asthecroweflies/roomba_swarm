@@ -251,8 +251,8 @@ void drive(char* dist) {
   data5[0] = 0x89; // 137 = drive
   data5[1] = velocity_highbyte;
   data5[2] = velocity_lowbyte;
-  data5[3] = rad[0];
-  data5[4] = rad[1];
+  data5[3] = 0x0F;
+  data5[4] = 0x0F;
   //data5[3] = dist[0];
   //data5[4] = dist[1];
   n = write(create_fd, &data5, 5);
