@@ -348,7 +348,7 @@ void stopRobot() {
 }
 
 void executeSeq(char* cmd) {
-   printf("Move sequence: %s composed of %d chars\n", cmd, strlen(cmd) - 1);
+   //printf("Move sequence: %s composed of %d chars\n", cmd, strlen(cmd) - 1);
    // egs: w5aw10ds4
    //      ddw3dd555s04dds2 -> "ddwddsdd" & [3, 4, 2]
 
@@ -396,14 +396,14 @@ void executeSeq(char* cmd) {
         }
     }
 
-    int d;
+    /*int d;
     for (d = 0; d < durationCnt; d++) {
         printf("%d ", moveDurations[d]);
     }
     int m;
     for (m = 0; m < moveCnt; m++) {
         printf("%c", moveCmd[m]);
-    }
+    }*/
 
    char* distance = "0x60";
    durationIndex = 0;
@@ -414,7 +414,7 @@ void executeSeq(char* cmd) {
             return;
         }
 
-        printf("Sending %c to roomba\n", cmd[c]);
+        //printf("Sending %c to roomba\n", cmd[c]);
         switch (cmd[c]) {
                 case 'w':
                 case 'W':
