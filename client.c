@@ -251,8 +251,8 @@ void drive(char* dist) {
   data5[0] = 0x89; // 137 = drive
   data5[1] = velocity_highbyte;
   data5[2] = velocity_lowbyte;
-  data5[3] = 0x0F;
-  data5[4] = 0x0F;
+  data5[3] = 0xF4;
+  data5[4] = 0xF3;
   //data5[3] = dist[0];
   //data5[4] = dist[1];
   n = write(create_fd, &data5, 5);
@@ -285,7 +285,7 @@ void reverse(){
   data5[0] = 0x89; // 137 = drive
   data5[1] = 0xFF; // 255 = reverse
   data5[2] = 0x38; // 56
-  data5[3] = 0x01; // 1
+  data5[3] = 0xF3; // 1
   data5[4] = 0xF4; // 244
   n = write(create_fd, &data5, 5);
   if (n < 0){
